@@ -29,7 +29,7 @@ Extensions::Extensions()
 , fullscreenW(640)
 , fullscreenH(480)
 , zoneTimeout(30)
-, selectBotWeapons(true)
+, selectBotWeapons(false)
 , allowViewingSpawnPoint(false)
 {
 }
@@ -85,6 +85,7 @@ Settings::Settings()
 	}
 	wormSettings[0]->controlsEx[WormSettingsExtensions::Dig] = 15;
 	wormSettings[1]->controlsEx[WormSettingsExtensions::Dig] = 28;
+	wormSettings[0]->controller = 2;
 }
 
 typedef gvl::in_archive<gvl::octet_reader> in_archive_t;
