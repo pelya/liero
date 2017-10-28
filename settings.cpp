@@ -83,6 +83,8 @@ Settings::Settings()
 			wormSettings[i]->rgb[j] = defRGB[i][j];
 		}
 	}
+	wormSettings[0]->controlsEx[WormSettingsExtensions::Dig] = 15;
+	wormSettings[1]->controlsEx[WormSettingsExtensions::Dig] = 28;
 }
 
 typedef gvl::in_archive<gvl::octet_reader> in_archive_t;
