@@ -299,12 +299,14 @@ void Gfx::init()
 	
 	// Joystick init:
 	SDL_JoystickEventState(SDL_ENABLE);
+#if !defined(__ANDROID__) /* If we  don't open any joysticks, left analog gamepad stick will also act as a d-pad */
 	int numJoysticks = SDL_NumJoysticks();
 	joysticks.resize(numJoysticks);
 	for ( int i = 0; i < numJoysticks; ++i ) {
 		joysticks[i].sdlJoystick = SDL_JoystickOpen(i);
 		joysticks[i].clearState();
 	}
+#endif
 }
 
 void Gfx::setVideoMode()
