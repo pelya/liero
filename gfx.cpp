@@ -1783,7 +1783,11 @@ int Gfx::menuLoop()
 		if(testSDLKeyOnce(SDLK_ESCAPE))
 		{
 			if(curMenu == &mainMenu)
+			{
+				if (mainMenu.selectedId() == MainMenu::MaQuit)
+					selected = MainMenu::MaQuit;
 				mainMenu.moveToId(MainMenu::MaQuit);
+			}
 			else
 				curMenu = &mainMenu;
 		}
