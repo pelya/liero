@@ -60,13 +60,15 @@
 #  define TL_X86_64 1
 # elif defined(__i386__) || defined(_M_IX86) || defined(i386) || defined(i486) || defined(intel) || defined(x86) || defined(i86pc)
 #  define TL_X86 1
+# elif defined(__ANDROID__)
+#  define TL_LINUX 1
 # else
 #  error "Unknown architecture, please add it"
 # endif
 #endif
 
 #if !TL_LITTLE_ENDIAN && !TL_BIG_ENDIAN
-# if TL_X86 || TL_X86_64
+# if TL_X86 || TL_X86_64 || defined(__ANDROID__)
 #  define TL_LITTLE_ENDIAN 1
 # else
 #  define TL_BIG_ENDIAN 1
