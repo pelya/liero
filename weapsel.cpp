@@ -225,7 +225,7 @@ bool WeaponSelection::processFrame()
 				menus[i].movement(1);
 			}
 			
-			if(worm.pressed(Worm::Fire))
+			if(worm.pressed(Worm::Fire) || worm.pressed(Worm::Jump) || worm.cleanControlStates[WormSettings::Dig])
 			{
 				if(menus[i].selection() == 0)
 				{

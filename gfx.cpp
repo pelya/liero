@@ -1079,7 +1079,8 @@ void Gfx::selectLevel()
 		
 		if(testSDLKeyOnce(SDLK_RETURN)
 		|| testSDLKeyOnce(SDLK_KP_ENTER)
-		|| testSDLKeyOnce(SDLK_RCTRL))
+		|| testSDLKeyOnce(SDLK_RCTRL)
+		|| testSDLKeyOnce(SDLK_RSHIFT))
 		{
 			sfx.play(common, 27);
 			
@@ -1138,7 +1139,8 @@ void Gfx::selectProfile(WormSettings& ws)
 
 		if(testSDLKeyOnce(SDLK_RETURN)
 		|| testSDLKeyOnce(SDLK_KP_ENTER)
-		|| testSDLKeyOnce(SDLK_RCTRL))
+		|| testSDLKeyOnce(SDLK_RCTRL)
+		|| testSDLKeyOnce(SDLK_RSHIFT))
 		{
 			auto* sel = profileSel.enter();
 
@@ -1192,7 +1194,8 @@ int Gfx::selectReplay()
 		
 		if(testSDLKeyOnce(SDLK_RETURN)
 		|| testSDLKeyOnce(SDLK_KP_ENTER)
-		|| testSDLKeyOnce(SDLK_RCTRL))
+		|| testSDLKeyOnce(SDLK_RCTRL)
+		|| testSDLKeyOnce(SDLK_RSHIFT))
 		{
 			auto* sel = replaySel.enter();
 
@@ -1248,7 +1251,8 @@ void Gfx::selectOptions()
 		
 		if(testSDLKeyOnce(SDLK_RETURN)
 		|| testSDLKeyOnce(SDLK_KP_ENTER)
-		|| testSDLKeyOnce(SDLK_RCTRL))
+		|| testSDLKeyOnce(SDLK_RCTRL)
+		|| testSDLKeyOnce(SDLK_RSHIFT))
 		{
 			auto* sel = optionsSel.enter();
 
@@ -1306,7 +1310,8 @@ std::unique_ptr<Common> Gfx::selectTc()
 		
 		if(testSDLKeyOnce(SDLK_RETURN)
 		|| testSDLKeyOnce(SDLK_KP_ENTER)
-		|| testSDLKeyOnce(SDLK_RCTRL))
+		|| testSDLKeyOnce(SDLK_RCTRL)
+		|| testSDLKeyOnce(SDLK_RSHIFT))
 		{
 			auto* sel = tcSel.enter();
 
@@ -1498,6 +1503,7 @@ bool Gfx::inputString(std::string& dest, std::size_t maxLen, int x, int y, int (
 		case SDLK_RETURN:
 		case SDLK_KP_ENTER:
 		case SDLK_RCTRL:
+		case SDLK_RSHIFT:
 			dest = buffer;
 			sfx.play(*common, 27);
 			clearKeys();
@@ -1832,7 +1838,8 @@ int Gfx::menuLoop()
 
 		if(testSDLKeyOnce(SDLK_RETURN)
 		|| testSDLKeyOnce(SDLK_KP_ENTER)
-		|| testSDLKeyOnce(SDLK_RCTRL))
+		|| testSDLKeyOnce(SDLK_RCTRL)
+		|| testSDLKeyOnce(SDLK_RSHIFT))
 		{
 			if(curMenu == &mainMenu)
 			{
