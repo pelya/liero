@@ -415,7 +415,7 @@ void presentStats(NormalStatsRecorder& recorder, Game& game)
 		{
 			destPane = std::max(destPane - 1.0, -1.0);
 		}
-		else if (gfx.testSDLKey(SDLK_RETURN) || gfx.testSDLKey(SDLK_ESCAPE) || gfx.testSDLKey(SDLK_RCTRL) || gfx.testSDLKey(SDLK_RSHIFT))
+		else if (gfx.testSDLKey(SDLK_RETURN) || gfx.testSDLKey(SDLK_ESCAPE) || gfx.testSDLKey(SDLK_RCTRL) || gfx.testSDLKey(SDLK_RSHIFT) || gfx.testSDLKey(SDLK_RALT))
 		{
 			break;
 		}

@@ -1418,7 +1418,7 @@ void Gfx::weaponOptions()
 		menuFlip();
 		process();
 		
-		if(testSDLKeyOnce(SDLK_ESCAPE))
+		if(testSDLKeyOnce(SDLK_ESCAPE) || testSDLKeyOnce(SDLK_RALT))
 		{
 			int count = 0;
 			
@@ -1503,13 +1503,14 @@ bool Gfx::inputString(std::string& dest, std::size_t maxLen, int x, int y, int (
 		case SDLK_RETURN:
 		case SDLK_KP_ENTER:
 		case SDLK_RCTRL:
-		case SDLK_RSHIFT:
+		//case SDLK_RSHIFT:
 			dest = buffer;
 			sfx.play(*common, 27);
 			clearKeys();
 			return true;
 			
 		case SDLK_ESCAPE:
+		case SDLK_RALT:
 			clearKeys();
 			return false;
 			
@@ -1812,7 +1813,7 @@ int Gfx::menuLoop()
 		else
 			curMenu->draw(common, false);
 		
-		if(testSDLKeyOnce(SDLK_ESCAPE))
+		if(testSDLKeyOnce(SDLK_ESCAPE) || testSDLKeyOnce(SDLK_RALT))
 		{
 			if(curMenu == &mainMenu)
 			{

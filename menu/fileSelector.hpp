@@ -300,7 +300,7 @@ struct FileSelector
 			menu().movementPage(1);
 		}
 
-		if (gfx.testSDLKeyOnce(SDLK_ESCAPE))
+		if (gfx.testSDLKeyOnce(SDLK_ESCAPE) || gfx.testSDLKeyOnce(SDLK_RALT))
 		{
 			return false;
 		}
