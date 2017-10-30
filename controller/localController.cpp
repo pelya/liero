@@ -97,6 +97,18 @@ void LocalController::onKey(int key, bool keyState)
 			if(!worm->cleanControlStates[Worm::Right])
 				worm->release(Worm::Right);
 		}
+		if(worm->cleanControlStates[WormSettings::Rope])
+		{
+			worm->press(Worm::Change);
+			worm->press(Worm::Jump);
+		}
+		else
+		{
+			if(!worm->cleanControlStates[Worm::Change])
+				worm->release(Worm::Change);
+			if(!worm->cleanControlStates[Worm::Jump])
+				worm->release(Worm::Jump);
+		}
 	}
 			
 	if(key == DkEscape && !goingToMenu)

@@ -73,6 +73,7 @@ struct WormSettingsExtensions
 		Fire, Change, Jump,
 		Dig,
 		MaxControl = Dig,
+		Rope,
 		MaxControlEx
 	};
 	//static const int MaxControl = Dig;

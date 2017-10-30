@@ -371,6 +371,7 @@ void Gfx::loadMenus()
 	playerMenu.addItem(MenuItem(48, 7, "CHANGE", PlayerMenu::PlChange));
 	playerMenu.addItem(MenuItem(48, 7, "JUMP", PlayerMenu::PlJump));
 	playerMenu.addItem(MenuItem(48, 7, "DIG", PlayerMenu::PlDig));
+	playerMenu.addItem(MenuItem(48, 7, "ROPE", PlayerMenu::PlRope));
 
 	for (int i = 0; i < 5; ++i)
 		playerMenu.addItem(MenuItem(48, 7, std::string("WEAPON ") + (char)(i + '1'), PlayerMenu::PlWeap0 + i));
@@ -1575,6 +1576,8 @@ ItemBehavior* PlayerMenu::getItemBehavior(Common& common, MenuItem& item)
 		case PlDig: // Controls Extension
 			return new KeyBehavior(common, ws->controlsEx[item.id - PlUp], ws->controlsEx[item.id - PlUp], gfx.settings->extensions);
 
+		case PlRope: // Controls Extension
+			return new KeyBehavior(common, ws->controlsEx[item.id - PlUp], ws->controlsEx[item.id - PlUp], gfx.settings->extensions);
 			
 		case PlController: // Controller
 			return new ArrayEnumBehavior(common, ws->controller, common.texts.controllers);

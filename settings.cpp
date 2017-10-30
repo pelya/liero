@@ -85,6 +85,8 @@ Settings::Settings()
 	}
 	wormSettings[0]->controlsEx[WormSettingsExtensions::Dig] = 15;
 	wormSettings[1]->controlsEx[WormSettingsExtensions::Dig] = 28;
+	wormSettings[0]->controlsEx[WormSettingsExtensions::Rope] = 41;
+	wormSettings[1]->controlsEx[WormSettingsExtensions::Rope] = 53;
 	wormSettings[0]->controller = 2;
 }
 

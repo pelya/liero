@@ -57,6 +57,7 @@ struct PlayerMenu : Menu
 		PlChange,
 		PlJump,
 		PlDig,
+		PlRope,
 		PlWeap0,
 		PlController = PlWeap0 + 5,
 		PlSaveProfile,
