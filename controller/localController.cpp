@@ -77,6 +77,7 @@ void LocalController::onKey(int key, bool keyState)
 	Worm* worm = game.findControlForKey(key, control);
 	if(worm)
 	{
+		bool ropeOut = worm->cleanControlStates[WormSettings::Rope];
 		worm->cleanControlStates.set(control, keyState);
 		
 		if(control < Worm::MaxControl)
@@ -99,8 +100,11 @@ void LocalController::onKey(int key, bool keyState)
 		}
 		if(worm->cleanControlStates[WormSettings::Rope])
 		{
-			worm->press(Worm::Change);
-			worm->press(Worm::Jump);
+			if(!ropeOut)
+			{
+				worm->press(Worm::Change);
+				worm->press(Worm::Jump);
+			}
 		}
 		else
 		{
