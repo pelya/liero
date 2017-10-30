@@ -289,7 +289,7 @@ Gfx::Gfx()
 
 void Gfx::init()
 {
-	SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY, SDL_DEFAULT_REPEAT_INTERVAL);
+	//SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY, SDL_DEFAULT_REPEAT_INTERVAL);
 	SDL_EnableUNICODE(1);
 	SDL_WM_SetCaption("Liero 1.37", 0);
 	SDL_ShowCursor(SDL_DISABLE);
