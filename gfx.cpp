@@ -16,6 +16,9 @@
 #include <cstdio>
 #include <memory>
 #include <limits>
+#ifdef __ANDROID__
+#include <SDL/SDL_screenkeyboard.h>
+#endif
 
 #include <gvl/io2/fstream.hpp>
 
@@ -334,6 +337,10 @@ void Gfx::setVideoMode()
 	back = SDL_SetVideoMode(windowW, windowH, bitDepth, flags);
 
 	doubleRes = (windowW >= 640 && windowH >= 400);
+
+#ifdef __ANDROID__
+	SDL_ANDROID_SetScreenKeyboardShown(0);
+#endif
 }
 
 void Gfx::loadMenus()
@@ -561,6 +568,14 @@ void Gfx::processEvent(SDL_Event& ev, Controller* controller)
 
 		case SDL_ACTIVEEVENT:
 		{
+		}
+		break;
+
+		case SDL_MOUSEBUTTONUP:
+		{
+#ifdef __ANDROID__
+			SDL_ANDROID_SetScreenKeyboardShown(1);
+#endif
 		}
 		break;
 	}
