@@ -574,7 +574,9 @@ void Gfx::processEvent(SDL_Event& ev, Controller* controller)
 		case SDL_MOUSEBUTTONUP:
 		{
 #ifdef __ANDROID__
-			SDL_ANDROID_SetScreenKeyboardShown(1);
+			if (getenv("TV")) {
+				SDL_ANDROID_SetScreenKeyboardShown(1);
+			}
 #endif
 		}
 		break;
